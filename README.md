@@ -6,12 +6,16 @@ An Inverted Index is an index data structure storing a mapping from content, suc
 
 # Versions:
 -Java: Java(TM) SE Development Kit 19.0.1 (64-bit)
+
 -Lucene: lucene-9.4.1
+
 -Tika: 2.5.0
 
 # Required folders:
 -"Index": an empty folder where the IndexWriter object will be saved
+
 -"documents": a folder of .doc(x), .txt. and .pdf documents used for search
+
 -"preprocessed_documents": an initially empty folder where the preprocessed documents will be saved into (after transforming into lowercase, diacritics elimination, tokenization, stop words elimination and stemming)
 
 # Classes:
