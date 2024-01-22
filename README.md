@@ -19,7 +19,7 @@ An Inverted Index is an index data structure storing a mapping from content, suc
 -"preprocessed_documents": an initially empty folder where the preprocessed documents will be saved into (after transforming into lowercase, diacritics elimination, tokenization, stop words elimination and stemming)
 
 # Classes:
--LuceneConstants: a class file with static variables for Indexer and Searcher
+-LuceneConstants: a class file with static variables for Indexer and Searcher.
 
 -FileLoader: includes the "load" method, which uses the tika module for loading the documents' and return them as strings.
 
@@ -33,4 +33,12 @@ An Inverted Index is an index data structure storing a mapping from content, suc
 3. The "createIndex" and "indexFile" methods are indexing the files from the "documents" folder using the IndexWriter object. The StringProcessor class output for each file is written in the "preprocessed_documents" folder as .txt files.
 
 -Searcher:
+1. The "Searcher" constructor creates IndexSearcher and QueryParser objects.
+2. The "search" method transforms the string-type query to a Query object and returns a TopDocs object corresponding with the documents containing the query in a descending order of their correlation value to the query obtained with IndexSearcher.
+3. The "getDocument" method receives a ScoreDoc type object corresponding to the top document with the highest correlation and returns said document found with IndexSearcher.
 
+-LuceneTester:
+1. The "main" function obtains the user input query.
+2. The "queryProcessor" function follows the same processing steps for the query as for the documents, using the methods from the StringProcessor class.
+3. The "createIndex" method starts the indexing process of the Indexer class.
+4. the "search" method starts the searching process of the Searcher class. The output printed is the number of documents in TopDocs, the duration of the indexing process  and the path of the documents.
