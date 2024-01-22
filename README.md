@@ -19,4 +19,18 @@ An Inverted Index is an index data structure storing a mapping from content, suc
 -"preprocessed_documents": an initially empty folder where the preprocessed documents will be saved into (after transforming into lowercase, diacritics elimination, tokenization, stop words elimination and stemming)
 
 # Classes:
--LuceneConstants: a class file with static variables for Indexer and Searcher ()
+-LuceneConstants: a class file with static variables for Indexer and Searcher
+
+-FileLoader: includes the "load" method, which uses the tika module for loading the documents' and return them as strings.
+
+-StringProcessor: 
+1. The "diacriticReplacer" method replaces different forms of the same diacritical marks to their default marks.
+2. The "tokenizerStemmer" method eliminates the romanian stop words from the stop word list given by RomanianAnalyzer, stems the obtained strings, eliminates diacritics and returns a List<String> object.
+
+-Indexer:
+1. The "Indexer" constructor creates an IndexWriter object.
+2. The "getDocument" returns a Document type object based on a File object (document content, name and path).
+3. The "createIndex" and "indexFile" methods are indexing the files from the "documents" folder using the IndexWriter object. The StringProcessor class output for each file is written in the "preprocessed_documents" folder as .txt files.
+
+-Searcher:
+
