@@ -1,4 +1,4 @@
-This project is a simulation of a search engine which outputs the path of the documents based on the search string query input. The program has been adapted on romanian text and deals with diacritics to non-diacritics search and vice-versa.
+This project is a simulation of a search engine which outputs the path of the documents based on the search string query input. The program has been adapted on Romanian text and deals with diacritics to non-diacritics search and vice-versa.
 
 The search engine is a combination of 2 components - the Indexer and Searcher. The Indexer creates an Inverted Index of the received documents. The Searcher uses the Inverted Index in order to find the documents related to the input query.
 
